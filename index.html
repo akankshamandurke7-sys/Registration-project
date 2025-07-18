@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech For Girls Registration</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://img.icons8.com/color/48/000000/female-technologist.png" type="image/x-icon">
+  
+  <!-- Meta tags for social sharing -->
+  <meta property="og:title" content="Tech For Girls Registration">
+  <meta property="og:description" content="Join our community of women in tech!">
+  <meta property="og:image" content="https://img.icons8.com/color/480/000000/female-technologist.png">
+  
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎀 Tech For Girls: Registration Form</h1>
+      <p class="subtitle">Join our community of aspiring women technologists</p>
+    </header>
+
+    <form id="registrationForm">
+      <!-- Basic Info Section -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        
+        <div class="form-group">
+          <label for="name">Full Name*</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number*</label>
+          <input type="tel" id="phone" name="phone" required 
+                 pattern="[0-9]{10}" 
+                 placeholder="10-digit number without spaces" />
+          <small class="hint">Format: 9876543210</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email ID*</label>
+          <input type="email" id="email" name="email" required 
+                 placeholder="your.email@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="department">College/Department*</label>
+          <select id="department" name="department" required>
+            <option value="" disabled selected>Select your department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- WhatsApp Share Section -->
+      <fieldset>
+        <legend>Spread the Word</legend>
+        <div class="form-group">
+          <p class="share-instructions">Help us grow by sharing with 5 friends:</p>
+          <button type="button" id="whatsappShareBtn" class="whatsapp-btn">
+            <span class="btn-icon">📤</span> Share on WhatsApp
+          </button>
+          <div class="share-feedback">
+            <p id="shareCounter">Progress: 0 of 5 shares</p>
+            <p id="shareMessage" class="hidden">✅ Sharing complete! Thank you!</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- File Upload -->
+      <fieldset>
+        <legend>Verification</legend>
+        <div class="form-group">
+          <label for="screenshot">Upload Screenshot of Shares*</label>
+          <input type="file" id="screenshot" name="screenshot" 
+                 accept="image/*,.pdf,.png,.jpg,.jpeg" required />
+          <small class="hint">Upload proof of your 5 shares (image or PDF)</small>
+        </div>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit" id="submitBtn" class="submit-btn">
+          <span class="btn-text">Submit Registration</span>
+        </button>
+      </div>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="hidden">
+        <div class="success-content">
+          <span class="success-icon">🎉</span>
+          <div>
+            <h3>Registration Successful!</h3>
+            <p>Your submission has been recorded. Welcome to Tech for Girls!</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Link to JS -->
+  <script src="script.js"></script>
+
+  <!-- Confetti animation CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
